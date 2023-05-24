@@ -57,6 +57,57 @@ header {
     background-color: var(--azul-medio);
 }
 
+/* toggle menu*/
+.X {
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .bar1 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+    transform: translate(0, 11px) rotate(-45deg);
+  }
+  
+  .bar2 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+    opacity: 0;
+  }
+  
+  .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+    transform: translate(0, -11px) rotate(45deg);
+  }
+  
+  .sanduiche > div.bar1{
+    transform: translate(0, 11px) rotate(0deg);
+  }
+  
+  .sanduiche > div.bar2{
+    transform: translate(0, -11px) rotate(0deg);
+    opacity: 1;
+  }
+  
+  .sanduiche > div.bar3{
+    transform: translate(0, 0px) rotate(0deg);
+  }
+  
+  .escondeMenu {
+    display: none;
+  }
+  /*toggle menu*/
+
 .menu ul {
     min-width: 500px;
     list-style: none;
@@ -175,6 +226,22 @@ main {
 .card-produtos > .avaliacao {
     max-width: 60px;
     display: inline;
+}
+
+.detalhes {
+    display: inline-block;
+    margin: 10px 0px;
+    color: white;
+    text-align: center;
+    background-color: var(--azul-escuro);
+    padding: 5px;
+    border-radius: 7px;
+    text-decoration: none;
+}
+  
+.card-produtos > .detalhes:hover {
+    background-color: var(--azul-medio);
+    text-decoration: none;
 }
 
 .mais-vistos {
@@ -309,6 +376,12 @@ footer a {
     margin-bottom: 0px;
 }
 
+@media (min-width: 500px) {
+    .X {
+      opacity: 0;
+    }
+}
+
 @media (max-width: 500px) {
     header {
         padding: 0px;
@@ -339,6 +412,10 @@ footer a {
     .menu li {
         width: 300px;
     }
+
+    .X {
+        opacity: 1;
+      }
 
     main {
         padding: 50px 0px;
