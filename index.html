@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <title>Tech Books</title>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="images/logo-tech-books.png" alt="logo">
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Buscar..."/>
+            <a href=""><img src="images/search-icon.png" alt="Buscar"></a>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li class="emoji-fire"><a href="#"> Mais procurados</a></li>
+                <li class="emoji-time"><a href="#"> Em promoção</a></li>
+                <li><a href="#">Entrar</a></li>
+                <li><a href="#">Cadastrar-se</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--CARROSSEL COM BOOTSTRAP-->
+    <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="images/1.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="images/2.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="images/3.png" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <!--CARROSSEL COM BOOTSTRAP-->
+
+      <main>
+        <section class="produtos">
+          <div class="card-produtos">
+            <img src="images/Algoritmos-Logica-Programação.jpg" alt="">
+            <p><a href="https://www.amazon.com.br/Algoritmos-L%C3%B3gica-Programa%C3%A7%C3%A3o-Marco-Furlan/dp/8522128146">Algoritmos e lógica de programação</a></p>
+            <img class="avaliacao" src="images/estrelas.png" alt="">
+            <p>R$ 59,00</p>
+          </div>
+          
+          <div class="card-produtos">
+            <img src="images/Entendendo-Algoritmos.jpg" alt="">
+            <p><a href="https://www.amazon.com.br/Entendendo-Algoritmos-Ilustrado-Programadores-Curiosos/dp/8575225634">Entendendo Algoritmos</a></p>
+            <img class="avaliacao" src="images/estrelas.png" alt="">
+            <p>R$ 62,00</p>
+          </div>
+
+          <div class="card-produtos">
+            <img src="images/Programming-csharp.jpg" alt="cade">
+            <p><a href="https://www.oreilly.com/library/view/programming-c-10/9781098117801/">Programming C# 10</a></p>
+            <img class="avaliacao" src="images/estrelas.png" alt="">
+            <p>R$ 110,00</p>
+          </div>
+
+          <div class="card-produtos">
+            <img src="images/Engenharia-Software.jpg" alt="">
+            <p><a href="https://www.amazon.com.br/Engenharia-Software-Moderna-Desenvolvimento-Produtividade-ebook/dp/B086K5QJ9V">Engenharia de Software Moderna</a></p>
+            <img class="avaliacao" src="images/estrelas.png" alt="">
+            <p>R$ 39,00</p>
+          </div>
+          
+          <div class="card-produtos">
+            <img src="images/Clean-Code.jpg" alt="">
+            <p><a href="https://www.amazon.com.br/C%C3%B3digo-limpo-Robert-C-Martin/dp/8576082675">Código Limpo</a></p>
+            <img class="avaliacao" src="images/estrelas.png" alt="">
+            <p>R$ 76,00</p>
+          </div>
+
+          <div class="card-produtos">
+            <img src="images/Inteligencia-Artificial.jpg" alt="cade">
+            <p><a href="https://www.amazon.com.br/Artificial-Intelligence-Approach-Stuart-Russell/dp/0134610997">Artificial Intelligence: A Modern Approach</a></p>
+            <img class="avaliacao" src="images/estrelas.png" alt="">
+            <p>R$ 385,00</p>
+          </div>
+
+          <div class="card-produtos">
+            <img src="images/Redes.jpg" alt="">
+            <p><a href="https://www.amazon.com.br/Redes-Computadores-Andrew-Tanenbaum/dp/8582605609/ref=asc_df_8582605609/?tag=googleshopp00-20&linkCode=df0&hvadid=379773616949&hvpos=&hvnetw=g&hvrand=11396331211073688079&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1031586&hvtargid=pla-1405205275424&psc=1">Redes de Computadores</a></p>
+            <img class="avaliacao" src="images/estrelas.png" alt="">
+            <p>R$ 225,00</p>
+          </div>
+          
+          <div class="card-produtos">
+            <img src="images/Circuitos.jpg" alt="">
+            <p><a href="https://www.amazon.com.br/Fundamentos-Circuitos-El%C3%A9tricos-Charles-Alexander/dp/8580551722/ref=asc_df_8580551722/?tag=googleshopp00-20&linkCode=df0&hvadid=379793917328&hvpos=&hvnetw=g&hvrand=14348719692494198845&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1031586&hvtargid=pla-386829767739&psc=1">Fundamentos de Circuitos Elétricos</a></p>
+            <img class="avaliacao" src="images/estrelas.png" alt="">
+            <p>R$ 192,00</p>
+          </div>
+
+          <div class="card-produtos">
+            <img src="images/Grafos.jpg" alt="cade">
+            <p><a href="https://www.amazon.com.br/Fundamentos-Teoria-Grafos-para-Computa%C3%A7%C3%A3o/dp/8521634463/ref=cm_cr_arp_d_product_top?ie=UTF8">Fundamentos da teoria dos grafos para Computação</a></p>
+            <img class="avaliacao" src="images/estrelas.png" alt="">
+            <p>R$ 130,00</p>
+          </div>
+          </div>
+        </section>
+
+        <section class="mais-vistos-e-newsletter">
+          <div class="mais-vistos">
+            <h4 style="text-align: center; color: var(--azul-escuro); font-weight: bolder;">MAIS PROCURADOS</h1>
+            
+              <div class="card-mais-vistos">
+              <div><img src="images/Entendendo-Algoritmos.jpg" alt=""></div>
+              <div class="descricao">
+                <p><a href="">Entendendo Algoritmos</a></p>
+                <img src="images/estrelas.png" alt="">
+                <p><b>R$ 62,00</b></p>
+              </div>
+            </div>
+
+            <div class="card-mais-vistos">
+              <div><img src="images/Clean-Code.jpg" alt=""></div>
+              <div class="descricao">
+                <p><a href="">Clean-Code</a></p>
+                <img src="images/estrelas.png" alt="">
+                <p><b>R$ 76,00</b></p>
+              </div>
+            </div>
+            
+            <div class="card-mais-vistos">
+              <div><img src="images/Grafos.jpg" alt=""></div>
+              <div class="descricao">
+                <p><a href="">Fundamentos da Teoria dos Grafos para computação</a></p>
+                <img src="images/estrelas.png" alt="">
+                <p><b>R$ 130,00</b></p>
+              </div>
+            </div>
+            
+            <div class="card-mais-vistos">
+              <div><img src="images/Inteligencia-Artificial.jpg" alt=""></div>
+              <div class="descricao">
+                <p><a href="">Artificial Intelligence: A Modern Approach</a></p>
+                <img src="images/estrelas.png" alt="">
+                <p><b>R$ 385,00</b></p>
+              </div>
+            </div>
+            
+            <div class="card-mais-vistos">
+              <div><img src="images/Engenharia-Software.jpg" alt=""></div>
+              <div class="descricao">
+                <p><a href="">Engenharia de Software Moderna</a></p>
+                <img src="images/estrelas.png" alt="">
+                <p><b>R$ 39,00</b></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="newsletter">
+            <h4 style="font-weight: bolder; text-align: center;">NEWSLETTER</h4>
+            <p>Receba as últimas atualizações</p>
+            <input type="text" placeholder="Seu melhor e-mail">
+            <p><a href="#">Cadastrar</a></p>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div class="pagamento">
+          <h1>Métodos de pagamento</h1>
+          <a href="https://www.elo.com.br/"><img src="images/elo.png" alt=""></a>
+          <a href="https://www.visa.com.br/"><img src="images/visa.png" alt=""></a>
+          <a href="https://www.mastercard.com.br/pt-br.html"><img src="images/mastercard.png" alt=""></a>
+          <a href="https://www.hipercard.com.br/"><img src="images/hipercard.png" alt=""></a>
+        </div>
+
+        <div class="redes-sociais">
+          <h1>Siga-nos</h1>
+          <a href="https://web.facebook.com/?_rdc=1&_rdr"><img src="images/facebook.png" alt=""></a>
+          <a href="https://twitter.com/"><img src="images/twitter.png" alt=""></a>
+          <a href="https://instagram.com"><img src="images/instagram.webp" alt=""></a>
+          <a href="https://www.whatsapp.com/?lang=pt_br"><img src="images/whatsapp.webp" alt=""></a>
+
+        </div>
+
+        <div class="contato">
+          <h1>Contato</h1>
+          <address>
+            <p>R. Rio Comprido - Cinco, Contagem - MG, 32010-025</p>
+            <a class="emoji-mail" href="mailto:vinicius.celio@sga.pucminas.br"> vinicius.celio@sga.pucminas.br</a>
+            <p class="emoji-tel"> (31) 4002-8922</p>
+          </address>
+
+        </div>
+      </footer>
+      <div class="direitos-autorais">
+        <p>Desenvolvido por Vinícius Célio -  Todos os direitos reservados. &copy;</p>
+      </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+</body>
+</html>
