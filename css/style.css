@@ -190,6 +190,7 @@ main {
     width: 240px;
     margin: 10px;
     padding: 15px;
+    height: max-content;
 }
 
 .card-produtos:hover {
@@ -198,39 +199,38 @@ main {
 
 .card-produtos > img {
     max-height: 210px;
+    max-width: 200px;
     width: auto;
     height: auto;
     margin: 0 auto;
     display: block;
 }
 
-.card-produtos > p {
+.card-produtos > .nome {
     padding: 10px 0px 0px 0px;
     margin-bottom: 0;
     color: var(--azul-escuro);
-}
-
-.card-produtos a{
-    text-decoration: none;
-    font-weight: light;
-}
-
-.card-produtos a:hover{
-    text-decoration: underline;
-}
-
-.card-produtos p:nth-child(4) {
     font-weight: bolder;
+    font-size: 20px ; 
+}
+
+.card-produtos > .preco {
+    margin-bottom: 0px;
+    background-color: rgb(37, 34, 34);
+    color: yellow;
+    margin: 15px 0px 0px 0px;
+    width: max-content;
 }
 
 .card-produtos > .avaliacao {
-    max-width: 60px;
-    display: inline;
+    color: rgb(68, 68, 68);
+    margin-bottom: 0px;
+    padding: 10px 0px 0px;
 }
 
 .detalhes {
     display: inline-block;
-    margin: 10px 0px;
+    margin-top: 15px;
     color: white;
     text-align: center;
     background-color: var(--azul-escuro);
