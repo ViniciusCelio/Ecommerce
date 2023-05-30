@@ -30,20 +30,29 @@ const select = document.querySelector("#filtro");
 select.addEventListener('change', FiltraProduto);
 
 function FiltraProduto () {
-  const categorias = document.querySelectorAll('.produtos .card-produtos');
-  var indice = select.selectedIndex;
+  var categorias = document.querySelectorAll('.produtos .card-produtos');
+  MostraTudo(categorias);
   var valorSelecionado = select.value;
-
+ 
   for(let card of categorias) {
     let categoria = card.querySelector('label').innerHTML;
-    /*if (categoria == all) {
-      card.style.display = "block";
-    }*/
-    
+
+    if(valorSelecionado == "all") {
+      MostraTudo(categorias);
+      break;
+    }
+
     if (categoria != valorSelecionado) {
       card.style.display = "none";
     }
   }
+}
 
+function MostraTudo (categorias) {
+  for(i = 0; i < categorias.length; i++) {
+    if (categorias[i].style.display == "none") {
+      categorias[i].style.display = "block";
+    }
+  }
 }
 
