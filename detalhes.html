@@ -8,9 +8,27 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
     <script src="/js/script.js" defer></script>
     <title>Tech Books</title>
+    <script>
+      const urlParams = new URLSearchParams(location.search);
+      ID_PET = parseInt(urlParams.get("id"));
+      fetch(`https://diwserver.vps.webdock.cloud/products/${ID_PET}`)
+        .then(resposta=>resposta.json())
+        .then(dados=> {
+          document.querySelector("#ProdutoDetalhado").innerHTML = 
+              `<div class="card-produtos">
+                  <img src="${dados.image}" alt="">
+                  <p class="nome">${dados.title}</p>
+                  <p class="preco">R$ ${dados.price.toFixed(2)}</p>
+                  <a href="detalhes.html?id=${dados.id}" class="detalhes">Detalhes</a>
+                  <p class="avaliacao">Avaliação: ${dados.rating.rate} (<span style="color:#6f6f6f">${dados.rating.count}</span>)</p>
+                  <label style="display:none">${dados.gender}</label>
+              </div>`;
+        })
+
+      console.log(parseInt(ID_PET));
+    </script>
 </head>
 <body>
-
     <header>
         <div class="logo">
             <img src="images/logo-tech-books.png" alt="logo">
@@ -63,79 +81,12 @@
       </div>
       <!--CARROSSEL COM BOOTSTRAP-->
       
-      <main>
-        <div class="filtro">
-          <h1>Filtro</h1>
-          <select name="filtro" id="filtro">
-            <option value="all" selected>Todos</option>
-            <option value="Women">Femininos</option>
-            <option value="Men">Masculinos</option>
-            <option value="Unisex">Unisex</option>
-          </select>
-        </div>
-        <section class="produtos">
-          <!-- CARDS DE PRODUTOS GERADO VIA JAVASCRIPT -->
-        </section>
+    <main>
+    <h1>DETALHES</h1>
+    <section id="ProdutoDetalhado">
 
-       <section class="mais-vistos-e-newsletter">
-          <div class="mais-vistos">
-            <h4 style="text-align: center; color: var(--azul-escuro); font-weight: bolder;">MAIS PROCURADOS</h1>
-            
-              <div class="card-mais-vistos">
-              <div><img src="images/Entendendo-Algoritmos.jpg" alt=""></div>
-              <div class="descricao">
-                <p><a href="">Entendendo Algoritmos</a></p>
-                <img src="images/estrelas.png" alt="">
-                <p><b>R$ 62,00</b></p>
-              </div>
-            </div>
-
-            <div class="card-mais-vistos">
-              <div><img src="images/Clean-Code.jpg" alt=""></div>
-              <div class="descricao">
-                <p><a href="">Clean-Code</a></p>
-                <img src="images/estrelas.png" alt="">
-                <p><b>R$ 76,00</b></p>
-              </div>
-            </div>
-            
-            <div class="card-mais-vistos">
-              <div><img src="images/Grafos.jpg" alt=""></div>
-              <div class="descricao">
-                <p><a href="">Fundamentos da Teoria dos Grafos para computação</a></p>
-                <img src="images/estrelas.png" alt="">
-                <p><b>R$ 130,00</b></p>
-              </div>
-            </div>
-            
-            <div class="card-mais-vistos">
-              <div><img src="images/Inteligencia-Artificial.jpg" alt=""></div>
-              <div class="descricao">
-                <p><a href="">Artificial Intelligence: A Modern Approach</a></p>
-                <img src="images/estrelas.png" alt="">
-                <p><b>R$ 385,00</b></p>
-              </div>
-            </div>
-            
-            <div class="card-mais-vistos">
-              <div><img src="images/Engenharia-Software.jpg" alt=""></div>
-              <div class="descricao">
-                <p><a href="">Engenharia de Software Moderna</a></p>
-                <img src="images/estrelas.png" alt="">
-                <p><b>R$ 39,00</b></p>
-              </div>
-            </div>
-          </div>
-
-          <div class="newsletter">
-            <h4 style="font-weight: bolder; text-align: center;">NEWSLETTER</h4>
-            <p>Receba as últimas atualizações</p>
-            <input type="text" placeholder="Seu melhor e-mail">
-            <p><a href="#">Cadastrar</a></p>
-          </div>
-        </section> 
+    </section>    
     </main>
-    
       <footer>
         <div class="pagamento">
           <h1>Métodos de pagamento</h1>
