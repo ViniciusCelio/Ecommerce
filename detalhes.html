@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/detalhes.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
     <script src="/js/script.js" defer></script>
     <title>Tech Books</title>
@@ -15,13 +16,20 @@
         .then(resposta=>resposta.json())
         .then(dados=> {
           document.querySelector("#ProdutoDetalhado").innerHTML = 
-              `<div class="card-produtos">
+              `<div class="card-detalhes">
                   <img src="${dados.image}" alt="">
-                  <p class="nome">${dados.title}</p>
-                  <p class="preco">R$ ${dados.price.toFixed(2)}</p>
-                  <a href="detalhes.html?id=${dados.id}" class="detalhes">Detalhes</a>
-                  <p class="avaliacao">Avaliação: ${dados.rating.rate} (<span style="color:#6f6f6f">${dados.rating.count}</span>)</p>
-                  <label style="display:none">${dados.gender}</label>
+                  <div class="detalhes-textuais">
+                    <p class="nome">${dados.title}</p>
+                    <p style="font-weight: bolder;">Marca: <span style="color:#6f6f6f">${dados.brandName}</span></p>
+                    <p style="font-weight: bolder;">Cor base: <span style="color:#6f6f6f">${dados.baseColour}</span> </p>
+                    <p style="font-weight: bolder;">Gênero: <span style="color:#6f6f6f">${dados.gender}</span></p>
+                    <p style="font-weight: bolder;">Ano: <span style="color:#6f6f6f">${dados.year}</span></p>
+                    <p style="font-weight: bolder;">Tipo: <span style="color:#6f6f6f">${dados.articleType}</span></p>
+                    <p class="preco">R$ ${dados.price.toFixed(2)}</p>
+                    <a href="#" class="detalhes">COMPRAR</a>
+                    <p class="avaliacao">Avaliação: ${dados.rating.rate} (<span style="color:#6f6f6f">${dados.rating.count}</span>)</p>
+                    <label style="display:none">${dados.gender}</label>
+                  </div>
               </div>`;
         })
 
@@ -80,9 +88,9 @@
         </button>
       </div>
       <!--CARROSSEL COM BOOTSTRAP-->
-      
+    
+    <h1 class="titulo">DETALHES DO PRODUTO</h1>
     <main>
-    <h1>DETALHES</h1>
     <section id="ProdutoDetalhado">
 
     </section>    

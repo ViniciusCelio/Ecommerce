@@ -27,7 +27,6 @@ fetch(`https://diwserver.vps.webdock.cloud/products/category/Footwear - Shoes/?p
 
 
 const select = document.querySelector("#filtro");
-
 select.addEventListener('change', FiltraProduto);
 
 function FiltraProduto () {
@@ -56,4 +55,3 @@ function MostraTudo (categorias) {
     }
   }
 }
-

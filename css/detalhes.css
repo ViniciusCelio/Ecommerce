@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;700;800&display=swap');
+
+* {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    --azul-escuro: #005162;
+    --azul-medio: #03989E;
+    --azul-claro: #c9eef0;
+}
+
+.titulo {
+    background-color: var(--azul-claro);
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Open Sans';
+    padding-top: 15px;
+}
+
+.card-detalhes {
+    border: 1px solid var(--azul-escuro);
+    border-radius: 10px;
+    background-color: white;
+    padding: 30px 15px 1px 15px;
+    display: flex;
+    gap: 20px;
+}
+
+.card-detalhes .nome {
+    color: var(--azul-escuro);
+    font-weight: bolder;
+    font-size: 20px ; 
+}
+
+.card-detalhes .preco {
+    margin-bottom: 0px;
+    background-color: rgb(37, 34, 34);
+    color: yellow;
+    margin: 15px 0px 0px 0px;
+    width: max-content;
+}
+.card-detalhes > img {
+    max-height: 500px;
+    max-width: 500px;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+.detalhes-textuais > .avaliacao {
+    padding-top: 10px;
+}
