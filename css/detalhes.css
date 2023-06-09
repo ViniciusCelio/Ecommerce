@@ -20,9 +20,15 @@
     border: 1px solid var(--azul-escuro);
     border-radius: 10px;
     background-color: white;
-    padding: 30px 15px 1px 15px;
+    padding: 30px 15px 15px 15px;
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
+}
+
+.detalhes-textuais
+{
+    max-width: 350px;
 }
 
 .card-detalhes .nome {
@@ -49,4 +55,11 @@
 
 .detalhes-textuais > .avaliacao {
     padding-top: 10px;
+}
+
+@media (max-width: 600px) {
+    .card-detalhes > img {
+        max-height: 300px;
+        max-width: 300px;
+    }
 }
