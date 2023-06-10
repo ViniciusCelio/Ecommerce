@@ -26,7 +26,7 @@ header {
     height: auto;
 }
 
-.search {
+.pesquisa {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -35,25 +35,25 @@ header {
     border-radius: 4px;
 }
 
-.search:hover {
+.pesquisa:hover {
     border: 3px solid var(--azul-medio);
 }
 
-.search input {
+.pesquisa input {
     width: 350px;
     border: none;
 }
 
-.search input:focus {
+.pesquisa input:focus {
    outline: 0;
 }
 
-.search a {
+.pesquisa a {
     padding: 5px 0px 0px 5px;
     background-color: var(--azul-escuro);
 }
 
-.search a:hover {
+.pesquisa a:hover {
     background-color: var(--azul-medio);
 }
 
@@ -389,11 +389,11 @@ footer a {
         gap: 15px;
     }
 
-    .search {
+    .pesquisa {
         min-width: 85vw;
     }
 
-    .search input {
+    .pesquisa input {
       width: 100%;
     }
 

@@ -6,52 +6,85 @@ function myFunction () {
   menu.classList.toggle("escondeMenu");
 }
 
-let str = '';
-for(j = 1; j <= 112; j++) {
-fetch(`https://diwserver.vps.webdock.cloud/products/category/Footwear - Shoes/?page=${j}`)
-    .then(resposta=>resposta.json())
-    .then(dados => {
-      for (let i = 0; i < dados.products.length; i++) {
-          str = str + `<div class="card-produtos">
-                  <img src="${dados.products[i].image}" alt="">
-                  <p class="nome">${dados.products[i].title}</p>
-                  <p class="preco">R$ ${dados.products[i].price.toFixed(2)}</p>
-                  <a href="detalhes.html?id=${dados.products[i].id}" class="detalhes">Detalhes</a>
-                  <p class="avaliacao">Avaliação: ${dados.products[i].rating.rate} (<span style="color:#6f6f6f">${dados.products[i].rating.count}</span>)</p>
-                  <label style="display:none">${dados.products[i].gender}</label>
-              </div>`;
-      }
-      document.querySelector('.produtos').innerHTML = str;
-    });
+if (document.location.pathname == '/index.html') {
+  let str = '';
+  for(j = 1; j <= 112; j++) {
+  fetch(`https://diwserver.vps.webdock.cloud/products/category/Footwear - Shoes/?page=${j}`)
+      .then(resposta=>resposta.json())
+      .then(dados => {
+        for (let i = 0; i < dados.products.length; i++) {
+            str = str + `<div class="card-produtos">
+                    <img src="${dados.products[i].image}" alt="">
+                    <p class="nome">${dados.products[i].title}</p>
+                    <p class="preco">R$ ${dados.products[i].price.toFixed(2)}</p>
+                    <a href="detalhes.html?id=${dados.products[i].id}" class="detalhes">Detalhes</a>
+                    <p class="avaliacao">Avaliação: ${dados.products[i].rating.rate} (<span style="color:#6f6f6f">${dados.products[i].rating.count}</span>)</p>
+                    <label style="display:none">${dados.products[i].gender}</label>
+                </div>`;
+        }
+        document.querySelector('.produtos').innerHTML = str;
+      });
   }
 
+  const select = document.querySelector("#filtro");
+  select.addEventListener('change', FiltraProduto);
 
-const select = document.querySelector("#filtro");
-select.addEventListener('change', FiltraProduto);
+  function FiltraProduto () {
+    var categorias = document.querySelectorAll('.produtos .card-produtos');
+    MostraTudo(categorias);
+    var valorSelecionado = select.value;
+  
+    for(let card of categorias) {
+      let categoria = card.querySelector('label').innerHTML;
 
-function FiltraProduto () {
-  var categorias = document.querySelectorAll('.produtos .card-produtos');
-  MostraTudo(categorias);
-  var valorSelecionado = select.value;
- 
-  for(let card of categorias) {
-    let categoria = card.querySelector('label').innerHTML;
+      if(valorSelecionado == "all") {
+        MostraTudo(categorias);
+        break;
+      }
 
-    if(valorSelecionado == "all") {
-      MostraTudo(categorias);
-      break;
+      if (categoria != valorSelecionado) {
+        card.style.display = "none";
+      }
     }
+  }
 
-    if (categoria != valorSelecionado) {
-      card.style.display = "none";
+  function MostraTudo (categorias) {
+    for(i = 0; i < categorias.length; i++) {
+      if (categorias[i].style.display == "none") {
+        categorias[i].style.display = "block";
+      }
     }
   }
 }
 
-function MostraTudo (categorias) {
-  for(i = 0; i < categorias.length; i++) {
-    if (categorias[i].style.display == "none") {
-      categorias[i].style.display = "block";
-    }
+const botaoPesquisar = document.querySelector("#search");
+botaoPesquisar.addEventListener('click', PesquisaProduto);
+
+function PesquisaProduto () {
+  var carrosel = document.querySelector("#carouselExampleIndicators");
+  carrosel.style.display="none";
+  var entrada = document.querySelector("#textSearch");
+  let str = `<h1 style="width:100%;text-align: center; color: var(--azul-escuro); font-weight: bolder;">Resultados para "${entrada.value}"</h1>`;
+  entradaTexto = entrada.value;
+  for(j = 1; j <= 112; j++) {
+    fetch(`https://diwserver.vps.webdock.cloud/products/category/Footwear - Shoes/?page=${j}`)
+        .then(resposta=>resposta.json())
+        .then(dados => {
+          for(i = 0;i < dados.products.length;i++) {
+            let nameAPI = dados.products[i].title;
+            
+            if(nameAPI.toLowerCase().includes(entradaTexto.toLowerCase())) {
+              str += `<div class="card-produtos">
+              <img src="${dados.products[i].image}" alt="">
+              <p class="nome">${dados.products[i].title}</p>
+              <p class="preco">R$ ${dados.products[i].price.toFixed(2)}</p>
+              <a href="detalhes.html?id=${dados.products[i].id}" class="detalhes">Detalhes</a>
+              <p class="avaliacao">Avaliação: ${dados.products[i].rating.rate} (<span style="color:#6f6f6f">${dados.products[i].rating.count}</span>)</p>
+              <label style="display:none">${dados.products[i].gender}</label>
+          </div>`;
+            }
+          }
+          document.querySelector('.produtos').innerHTML = str;
+        });
   }
 }
