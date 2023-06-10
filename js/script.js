@@ -6,7 +6,7 @@ function myFunction () {
   menu.classList.toggle("escondeMenu");
 }
 
-if (document.location.pathname == '/index.html') {
+if (document.location.pathname == 'Ecommerce/index.html') {
   let str = '';
   for(j = 1; j <= 112; j++) {
   fetch(`https://diwserver.vps.webdock.cloud/products/category/Footwear - Shoes/?page=${j}`)
