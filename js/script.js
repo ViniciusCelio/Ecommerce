@@ -5,8 +5,6 @@ function myFunction () {
   x.classList.toggle("sanduiche");
   menu.classList.toggle("escondeMenu");
 }
-
-if (document.location.pathname == 'Ecommerce/index.html') {
   let str = '';
   for(j = 1; j <= 112; j++) {
   fetch(`https://diwserver.vps.webdock.cloud/products/category/Footwear - Shoes/?page=${j}`)
@@ -55,7 +53,7 @@ if (document.location.pathname == 'Ecommerce/index.html') {
       }
     }
   }
-}
+
 
 const botaoPesquisar = document.querySelector("#search");
 botaoPesquisar.addEventListener('click', PesquisaProduto);

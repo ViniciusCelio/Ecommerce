@@ -55,6 +55,7 @@ header {
 
 .pesquisa a:hover {
     background-color: var(--azul-medio);
+    cursor: pointer;
 }
 
 /* toggle menu*/
